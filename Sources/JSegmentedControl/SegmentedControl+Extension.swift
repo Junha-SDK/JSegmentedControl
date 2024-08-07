@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension UISegmentedControl {
+public extension UISegmentedControl {
     //바탕지우는 코드
     func removeBorder(){
         
