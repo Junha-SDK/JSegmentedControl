@@ -11,11 +11,21 @@ let package = Package(
             name: "JSegmentedControl",
             targets: ["JSegmentedControl"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/Junha-SDK/JUtile", from: "0.0.2"),
+        .package(url: "https://github.com/devxoul/Then", from: "3.0.0"),
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.1")
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "JSegmentedControl"),
+            name: "JSegmentedControl",
+            dependencies: [
+                "JUtile",
+                "Then",
+                "SnapKit"
+            ],
+            path: "Sources/JSegmentedControl"
+        ),
         .testTarget(
             name: "JSegmentedControlTests",
             dependencies: ["JSegmentedControl"]),
